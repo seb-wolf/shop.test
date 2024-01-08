@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
-
+ 
 Route::get('/users/list', [UserController::class, 'index']) -> middleware('auth');
-Route::delete('/users/{id}', [UserController::class, 'destroy']) -> middleware('auth');
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');
+
 Route::get('/hello', [HelloWorldController::class, 'show']);
 
 Route::view('login','livewire.home');

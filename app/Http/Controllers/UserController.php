@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Exception;
+use Illuminate\Http\JsonResponse;
+use PhpParser\Node\Stmt\TryCatch;
+use Symfony\Component\HttpFoundation\JsonResponse as HttpFoundationJsonResponse;
 
 class UserController extends Controller
 {
@@ -62,12 +65,18 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        $flight = User::find($id);
-        $flight->delete();
-        return response()->json([
-            'status'=>'success'
-        ]);
+    public function destroy(User $user) : JsonResponse
+    {   
+        try {
+            $user->delete();
+            return response()->json([
+                'status'=>'success'
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'status'=>'error',
+                'message'=>'Wystąpił błąd!'
+            ])->setStatusCode(500);
+        }
     }
 }
