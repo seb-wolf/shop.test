@@ -35,7 +35,13 @@
 </div>
 @endsection
 @section('javascript')
+  <script>
+    let deleteURL = "{{ url('users') }}/";
+  </script>  
+  @stack('scripts')
 @endsection
 @section('js-files')
-  <script src="{{ asset('js/delete.js') }}"></script>
+  @push('scripts')
+    <script src="{{ asset('js/delete.js') }}"></script>
+  @endpush
 @endsection

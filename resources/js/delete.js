@@ -10,7 +10,7 @@ $(function() {
             if (result.value) {
                 $.ajax({
                     method: "DELETE",
-                    url: "{{ url('users') }}/" + $(this).data("id")
+                    url: deleteURL + $(this).data("id")
                 })
                 .done(function(data) {
                     window.location.reload();

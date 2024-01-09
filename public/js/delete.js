@@ -16,7 +16,7 @@ $(function () {
       if (result.value) {
         $.ajax({
           method: "DELETE",
-          url: "{{ url('users') }}/" + $(_this).data("id")
+          url: deleteURL + $(_this).data("id")
         }).done(function (data) {
           window.location.reload();
         }).fail(function (data) {
