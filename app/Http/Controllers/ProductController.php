@@ -74,17 +74,17 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): JsonResponse
     {  
-            try {
-                $product->delete();
-                return response()->json([
-                    'status'=>'success'
-                ]);
-            } catch (Exception $e) {
-                return response()->json([
-                    'status'=>'error',
-                    'message'=>'Wystąpił błąd!'
-                ])->setStatusCode(500);
-            }
+        try {
+            $product->delete();
+            return response()->json([
+                'status'=>'success'
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'status'=>'error',
+                'message'=>'Wystąpił błąd!'
+            ])->setStatusCode(500);
+        }
         
     }
 }
