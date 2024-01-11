@@ -9,7 +9,7 @@
         </div>
         <div class="col-6">
             <a class="float-end" href="{{ route('products.create') }}">
-                <button type="button" class="btn btn-primary">Dodaj</button>
+                <button type="button" class="btn btn-primary">Dodaj produkt</button>
             </a>
             
         </div>

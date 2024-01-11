@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ProductController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class ProductController extends Controller
      */
     public function create(): View
 {
-    return view("products.create");
+    dd("Metoda create działa!");
 }
 
 
