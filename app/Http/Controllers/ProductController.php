@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use App\Http\Requests\UpsertProductRequest;
+use App\Models\ProductCategory;
 
 class ProductController extends Controller
 
@@ -28,7 +29,9 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view("products.create");
+        return view("products.create", [
+            "categories" => ProductCategory::all()
+        ]);
     }
 
 
