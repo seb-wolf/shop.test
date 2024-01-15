@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Imię') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">Nazwisko</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Surname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="phone_number" class="col-md-4 col-form-label text-md-end">Numer telefonu</label>
+                            <label for="phone_number" class="col-md-4 col-form-label text-md-end">{{ __('Phone number') }}</label>
 
                             <div class="col-md-6">
                                 <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
@@ -55,7 +55,7 @@
 
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adres E-mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
