@@ -25,6 +25,7 @@ return [
             'amount'        => 'Amount',
             'price'         => 'Price',
             'image'         => 'Image',
+            'category'      => 'Category',
         ]
     ]
 ];
