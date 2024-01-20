@@ -23,6 +23,7 @@ Route::get('/', [WelcomeController::class, 'index']);
 
 Route::middleware('auth', 'verified')->group(function() {
     Route::resource('products', ProductController::class);
+    Route::put('products/{product}', [ProductController::class, 'update'])->name('products.update');
     
     Route::get('/users/list', [UserController::class, 'index']) -> middleware('auth');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');

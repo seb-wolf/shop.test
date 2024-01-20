@@ -2,10 +2,10 @@
 
 return [
     'welcome' => [
-        'products' => 'Produkty',
+        'products'   => 'Produkty',
         'categories' => 'Kategorie',
-        'price' => 'Cena',
-        'filter' => 'Filtruj',
+        'price'      => 'Cena',
+        'filter'     => 'Filtruj',
     ],
 
     'columns' => [
@@ -26,6 +26,18 @@ return [
         'edit_title'    => 'Edycja produktu: :name',
         'show_title'    => 'Podgląd produktu',
         'index_title'   => 'Lista produktu',
+        'status'        => [
+            'store'     => [
+                'success'   => 'Produkt zapisany!'
+            ],
+            'update'     => [
+                'success'   => 'Produkt zaktualizowany!'
+            ],
+            'delete'     => [
+                'success'   => 'Produkt usunięty!'
+            ],
+        ],
+
         'fields' => [
             'name'          => 'Nazwa',
             'description'   => 'Opis',

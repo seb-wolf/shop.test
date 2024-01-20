@@ -8,6 +8,8 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use PhpParser\Node\Stmt\TryCatch;
 use Symfony\Component\HttpFoundation\JsonResponse as HttpFoundationJsonResponse;
+use Illuminate\Support\Facades\Session;
+
 
 class UserController extends Controller
 {
@@ -69,6 +71,7 @@ class UserController extends Controller
     {   
         try {
             $user->delete();
+            Session::flash('status', __('shop.user.status.delete.success'));
             return response()->json([
                 'status'=>'success'
             ]);

@@ -3,6 +3,13 @@
 @section('content')
 
 <div class="container">
+    <div class="container">
+        @include('helpers.flash-messages')   
+        <div class="row">
+            <div class="col-6">
+                <h1>{{ __('shop.user.index_title') }}</h1>
+            </div>
+        </div>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -37,6 +44,7 @@
 @section('javascript')
   <script>
     let deleteURL = "{{ url('users') }}/";
+    const confirmDelete = "{{ __('shop.messages.delete_confirm') }}";
   </script>  
   @stack('scripts')
 @endsection
