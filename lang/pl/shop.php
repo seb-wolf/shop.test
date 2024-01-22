@@ -22,10 +22,10 @@ return [
     ],
 
     'product' => [
-        'add_title'     => 'Dodawanie produktu',
+        'add_title'     => 'Dodawanie produktów',
         'edit_title'    => 'Edycja produktu: :name',
         'show_title'    => 'Podgląd produktu',
-        'index_title'   => 'Lista produktu',
+        'index_title'   => 'Lista produktów',
         'status'        => [
             'store'     => [
                 'success'   => 'Produkt zapisany!'
