@@ -46,12 +46,12 @@
                     <div class="card-body text-center">
                     <h4 class="card-title">
                             {{ $product->name }}
-                        <!--</a>-->
                     </h4>
                     <h5 class="card-price small">
                         <i>PLN {{ $product->price }}</i>
                     </h5>
                     </div>
+                    <button class="btn btn-success btn-sm add-cart-button" data-id="{{ $product->id }}" @guest disabled @endguest><i class="fa-solid fa-cart-plus"></i> Dodaj do koszyka</button>
                 </div>
                 </div>
             @endforeach
@@ -106,8 +106,12 @@
 @section('javascript')
 @push('scripts')
   <script>
-    const storagePath = "{{ asset('storage') }}/";
-    const defaultImage = "{{ $defaultImage }}";
+    const WELCOME_DATA = {
+        storagePath: "{{ asset('storage') }}/",
+        defaultImage: "{{ $defaultImage }}",
+        addToCart: "{{ url('cart') }}/"
+    }
+    
   </script>
   <script src="{{ asset('js/welcome.js') }}"></script>
 @endpush
