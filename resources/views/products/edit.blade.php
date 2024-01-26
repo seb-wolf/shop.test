@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('products.update', $product->id) }}" enctype="multipart/form-data">
-                        @method('PUT')
+                        @method('PUT') 
                         @csrf 
                        
                         
@@ -107,7 +107,9 @@
                         <div class="row mb-3 justify-content-center">
                             <div class="col-md-6">
                                 @if(!is_null($product->image_path))
+                                <a href="{{ route('products.downloadImage', $product->id) }}">
                                     <img src="{{ asset('storage/' . $product->image_path) }}" class="img-thumbnail" alt="Zdjęcie produktu">
+                                </a>
                                 @endif
                             </div>
                         </div>
